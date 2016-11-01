@@ -1,0 +1,54 @@
+div.red {
+    
+    background: #ff2b4e;
+    width: 35%;
+    height: 954px;
+    float: left;
+    text-align: center;
+    font-size: 50px;
+    font-family: Impact, Charcoal, sans-serif;
+    
+    
+}
+
+div.blue {
+    
+    background: #2ba3ff;
+    width: 35%;
+    height: 954px;
+    float:right;
+    text-align: center;
+    font-size: 50px;
+    font-family: Impact, Charcoal, sans-serif;
+    
+}
+
+div.white {
+ 
+    background: #edf3f7;
+    height: 954px;
+    width: 30%;
+    float: left;
+    text-align: center;
+    font-size: 50px;
+    font-family: Impact, Charcoal, sans-serif;
+    
+}
+
+div.plus {
+    
+    padding-top: 40%;
+    
+}
+
+div.plus button {
+    
+    background: #efece8;
+    display: table;
+    margin: 0 auto;
+    width: 100px;
+    height: 100px;
+    font-size: 50px;
+    font-family: Impact, Charcoal, sans-serif;
+    
+}

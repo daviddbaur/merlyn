@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<body>
+<head>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<div id ="reddiv" class = red>
+    
+    Timer: 30
+
+    <br> 
+
+    <div class = plus> 
+        
+        <button type="button" onClick = "changeFunction(&#34;reddiv&#34;)">+</button> 
+         Click counter: 21 
+        <button type="button" onClick = "changeFunction(&#34;reddiv&#34;)">-</button>
+    
+    </div> 
+
+</div>
+
+<div class =white>
+
+    Klicks ben&ouml;tigt: 87
+    
+    <div>
+    
+        <br><br><br><br><br><br><br><br><br><br><br><br> Score Red: 8 <br> Score Blue: 6
+    </div> 
+</div>
+
+
+<div id ="bluediv" class = blue>
+    
+    Timer: 14 <br> 
+    
+    <div class = plus>
+    
+        <button type="button" onClick = "changeFunction(&#34;bluediv&#34;)">+</button>
+        Click counter: 3
+        <button type="button" onClick = "changeFunction(&#34;bluediv&#34;)">-</button>
+    </div>
+    
+</div>
+
+
+
+
+<script>
+
+    function changeFunction(divid) {
+        var clientHeight = document.getElementById(divid).clientHeight;
+        var changeSize = clientHeight - 31.8;
+        document.getElementById(divid).style.height = changeSize + 'px'; 
+    }
+    
+</script>
+
+</body>
+</html>
