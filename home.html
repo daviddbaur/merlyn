@@ -7,15 +7,15 @@
 
 <div id ="reddiv" class = red>
     
-    Timer: 30
+    Timer: <span id =timerred> 24 </span>
 
     <br> 
 
     <div class = plus> 
         
-        <button type="button" onClick = "changeFunction(&#34;reddiv&#34;)">+</button> 
-         Click counter: 21 
-        <button type="button" onClick = "changeFunction(&#34;reddiv&#34;)">-</button>
+        <button type="button" onClick = "counterplus(&#34;plusred&#34;,&#34;timerred&#34;,&#34;reddiv&#34;)">+</button> 
+         Click counter: <span id =plusred> 0 </span>
+        <button type="button" onClick = "counterminus(&#34;plusred&#34;,&#34;timerred&#34;,&#34;reddiv&#34;)">-</button>
     
     </div> 
 
@@ -23,7 +23,7 @@
 
 <div class =white>
 
-    Klicks ben&ouml;tigt: 87
+    Klicks ben&ouml;tigt: 3
     
     <div>
     
@@ -34,13 +34,13 @@
 
 <div id ="bluediv" class = blue>
     
-    Timer: 14 <br> 
+    Timer: <span id = timerblue> 20 </span> <br> 
     
     <div class = plus>
     
-        <button type="button" onClick = "changeFunction(&#34;bluediv&#34;)">+</button>
-        Click counter: 3
-        <button type="button" onClick = "changeFunction(&#34;bluediv&#34;)">-</button>
+        <button type="button" onClick = "counterplus(&#34;plusblue&#34;,&#34;timerblue&#34;,&#34;bluediv&#34;)">+</button>
+        Click counter: <span id = plusblue> 0 </span>
+        <button type="button" onClick = "counterminus(&#34;plusblue&#34;,&#34;timerblue&#34;,&#34;bluediv&#34;)">-</button>
     </div>
     
 </div>
@@ -50,12 +50,70 @@
 
 <script>
 
-    function changeFunction(divid) {
-        var clientHeight = document.getElementById(divid).clientHeight;
-        var changeSize = clientHeight - 31.8;
-        document.getElementById(divid).style.height = changeSize + 'px'; 
+    function counterplus(counterid, timer, color) {
+    
+        var countervalue = parseInt(document.getElementById(counterid).textContent);
+        countervalue ++;
+        document.getElementById(counterid).textContent = countervalue;
+        checktime(timer, counterid, color);
+    
     }
     
+    
+    function counterminus(counterid, timer, color) {
+    
+        var countervalue = parseInt(document.getElementById(counterid).textContent);
+        countervalue --;
+        document.getElementById(counterid).textContent = countervalue;
+        checktime(timer, counterid, color);
+    
+    }
+
+
+    function changeFunction(divid) {
+    
+        var clientHeight = document.getElementById(divid).clientHeight;
+        
+        var changeSize = clientHeight - 31.8;
+        
+        if (changeSize < 0) {
+        
+            
+            document.getElementById(divid).style.background ='transparent';
+            
+        }
+        
+        else {
+        
+            document.getElementById(divid).style.height = changeSize + 'px'; 
+            
+        }
+        
+        
+            
+        
+    }
+    
+    function checktime(timer, counterid, color) {
+    
+        var countervalue = parseInt(document.getElementById(counterid).textContent);
+    
+        var timervalue = parseInt(document.getElementById(timer).textContent);
+        
+        
+         
+        if (countervalue === 3) { 
+        
+            timervalue --;
+            document.getElementById(timer).textContent = timervalue;
+            countervalue = parseInt(document.getElementById(counterid).textContent);
+            changeFunction(color);
+            
+        }
+    
+    }
+    
+ 
 </script>
 
 </body>
